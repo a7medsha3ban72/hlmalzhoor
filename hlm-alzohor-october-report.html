@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>تقرير أداء — حلم الزهور | أكتوبر 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { overflow-x: hidden; max-width: 100%; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Tahoma', Arial, sans-serif; line-height: 1.7; color: #1a1a1a; background: #f8fafc; direction: rtl; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 24px 14px; width: 100%; }
+
+        .header { background: linear-gradient(135deg, #3b0764 0%, #6d28d9 55%, #a21caf 100%); color: white; padding: 36px 20px; border-radius: 16px; margin-bottom: 24px; text-align: center; position: relative; overflow: hidden; }
+        .header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(ellipse at center, rgba(255,255,255,0.04) 0%, transparent 60%); }
+        .header .brand { font-size: 36px; font-weight: 900; color: #fff; margin-bottom: 6px; position: relative; letter-spacing: 1px; }
+        .header .brand span { color: #f4c95d; }
+        .header h1 { font-size: 16px; font-weight: 500; opacity: 0.75; margin-bottom: 6px; position: relative; }
+        .header .date { font-size: 13px; opacity: 0.5; position: relative; }
+        .accent-bar { height: 4px; width: 80px; background: #f4c95d; margin: 12px auto; border-radius: 2px; }
+        .platform-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); border-radius: 24px; padding: 8px 16px; font-size: 13px; font-weight: 700; margin-top: 12px; position: relative; flex-wrap: wrap; justify-content: center; }
+
+        .section { background: white; border-radius: 12px; padding: 20px 16px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); overflow: hidden; }
+        .section-title { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 18px; border-right: 5px solid #e53935; padding-right: 12px; }
+
+        .metrics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
+        @media (min-width: 600px) { .metrics-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); } }
+        .metric-card { padding: 16px; border-radius: 10px; border: 2px solid #e2e8f0; }
+        .metric-card.dark { background: linear-gradient(135deg, #0a0a0a, #2d2d2d); color: white; border: none; }
+        .metric-card.red { background: linear-gradient(135deg, #e53935, #b71c1c); color: white; border: none; }
+        .metric-card.green { background: linear-gradient(135deg, #1b5e20, #2e7d32); color: white; border: none; }
+        .metric-card.blue { background: linear-gradient(135deg, #1565c0, #0d47a1); color: white; border: none; }
+        .metric-card.muted { background: #f1f5f9; }
+        .metric-card.gold { background: linear-gradient(135deg, #f57f17, #e65100); color: white; border: none; }
+        .metric-card.tiktok { background: linear-gradient(135deg, #010101, #2d2d2d); color: white; border: none; }
+        .metric-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.75; margin-bottom: 4px; }
+        .metric-value { font-size: 22px; font-weight: 700; line-height: 1.1; }
+        .metric-sub { font-size: 11px; opacity: 0.7; margin-top: 4px; }
+
+        /* COMPARISON TABLE */
+        .cmp-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+        .cmp-table th { background: #1a1a1a; color: white; padding: 10px 12px; text-align: right; font-size: 11px; font-weight: 700; }
+        .cmp-table td { padding: 12px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+        .cmp-table tr:last-child td { border-bottom: none; }
+        .cmp-table tr:hover td { background: #f8fafc; }
+        .up { color: #16a34a; font-weight: 700; }
+        .down { color: #dc2626; font-weight: 700; }
+        .neutral { color: #64748b; font-weight: 600; }
+
+        /* BADGE */
+        .badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+        .badge-green { background: #d1fae5; color: #065f46; }
+        .badge-yellow { background: #fef3c7; color: #92400e; }
+        .badge-red { background: #fee2e2; color: #991b1b; }
+        .badge-blue { background: #dbeafe; color: #1e40af; }
+        .badge-purple { background: #ede9fe; color: #6d28d9; }
+        .badge-gray { background: #f1f5f9; color: #475569; }
+
+        /* INSIGHT BOXES */
+        .insight-box { border-radius: 10px; padding: 20px; margin-bottom: 16px; border-right: 4px solid; }
+        .insight-box.critical { background: #fff5f5; border-color: #e53935; }
+        .insight-box.warning { background: #fffbeb; border-color: #f59e0b; }
+        .insight-box.success { background: #f0fdf4; border-color: #22c55e; }
+        .insight-box.info { background: #eff6ff; border-color: #2563eb; }
+        .insight-box.purple { background: #fdf4ff; border-color: #9333ea; }
+        .insight-box.national { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-color: #16a34a; }
+        .insight-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+        .critical .insight-title { color: #991b1b; }
+        .warning .insight-title { color: #92400e; }
+        .success .insight-title { color: #14532d; }
+        .info .insight-title { color: #1e40af; }
+        .purple .insight-title { color: #6b21a8; }
+        .national .insight-title { color: #14532d; }
+        .insight-text { font-size: 13px; line-height: 1.7; color: #475569; }
+        .action-list { margin-top: 10px; margin-right: 16px; }
+        .action-list li { font-size: 13px; color: #334155; margin-bottom: 4px; }
+
+        /* CITIES */
+        .city-row { display: flex; align-items: center; gap: 8px; padding: 10px 0; border-bottom: 1px solid #f1f5f9; flex-wrap: nowrap; }
+        .city-name { font-weight: 700; font-size: 13px; width: 80px; flex-shrink: 0; }
+        .city-bar-wrap { flex: 1; background: #f1f5f9; border-radius: 6px; height: 10px; overflow: hidden; min-width: 40px; }
+        .city-bar { height: 100%; border-radius: 6px; background: linear-gradient(90deg, #e53935, #b71c1c); }
+        .city-orders { font-size: 12px; color: #64748b; width: 54px; text-align: center; flex-shrink: 0; }
+        .city-value { font-size: 12px; font-weight: 700; color: #1a1a1a; width: 70px; text-align: left; flex-shrink: 0; }
+
+        /* NATIONAL DAY PLAN */
+        .nd-card { border-radius: 12px; padding: 18px; margin-bottom: 14px; border-right: 4px solid #16a34a; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.07); }
+        .nd-card-title { font-size: 14px; font-weight: 700; color: #14532d; margin-bottom: 8px; }
+        .nd-card-text { font-size: 13px; color: #334155; line-height: 1.8; }
+        .nd-timeline { display: flex; flex-direction: column; gap: 0; }
+        .nd-phase { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid #dcfce7; }
+        .nd-phase:last-child { border-bottom: none; }
+        .nd-phase-num { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg,#16a34a,#15803d); color: white; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .nd-phase-content { flex: 1; }
+        .nd-phase-title { font-size: 14px; font-weight: 700; color: #14532d; margin-bottom: 4px; }
+        .nd-phase-date { font-size: 11px; color: #16a34a; font-weight: 700; margin-bottom: 6px; }
+        .nd-phase-text { font-size: 12px; color: #475569; line-height: 1.7; }
+
+        @media (min-width: 600px) {
+            .header .brand { font-size: 48px; }
+            .header h1 { font-size: 20px; }
+            .metric-value { font-size: 28px; }
+            .section { padding: 28px 24px; }
+            .section-title { font-size: 20px; }
+            .city-name { width: 110px; font-size: 14px; }
+            .city-orders { width: 60px; font-size: 13px; }
+            .city-value { width: 80px; font-size: 13px; }
+        }
+    
+        :root { box-sizing: border-box; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+        html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+        .prod-row { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px; background:white; border-radius:8px; margin-bottom:8px; border-right:4px solid #94a3b8; }
+        .prod-row:last-child { margin-bottom:0; }
+        .prod-name { font-size:13px; font-weight:700; flex:1; min-width:0; }
+        .prod-tag { font-size:11px; color:#64748b; font-weight:400; }
+        .prod-qty { text-align:center; width:48px; flex-shrink:0; }
+        .prod-qty b { display:block; font-size:20px; font-weight:700; line-height:1.2; }
+        .prod-qty span, .prod-val span { font-size:10px; color:#64748b; }
+        .prod-val { text-align:left; width:96px; flex-shrink:0; }
+        .prod-val b { display:block; font-size:14px; font-weight:700; }
+        .fn-row { display:flex; align-items:center; gap:8px; padding:10px 0; border-bottom:1px solid #f1f5f9; }
+        .fn-row:last-child { border-bottom:none; }
+        .fn-name { font-weight:700; font-size:13px; width:120px; flex-shrink:0; }
+        .fn-count { font-size:14px; font-weight:700; width:56px; text-align:center; flex-shrink:0; }
+        .fn-rate { font-size:12px; color:#64748b; width:52px; text-align:left; flex-shrink:0; }
+        .fn-bar-leak { background: linear-gradient(90deg, #e53935, #b71c1c) !important; }
+        .fn-bar-ok { background: linear-gradient(90deg, #c2185b, #880e4f); }
+        .camp-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+        @media (min-width: 600px) { .camp-grid { grid-template-columns:repeat(3,1fr); } .fn-name { width:150px; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="brand">حلم <span>الزهور</span></div>
+        <h1>تقرير أداء الحملات والمتجر</h1>
+        <div class="accent-bar"></div>
+        <div class="platform-badge">📱 TikTok · 💬 Meta · 🛒 منصة سلة</div>
+        <div class="date" style="margin-top:14px;">1 – 31 أكتوبر 2026</div>
+    </div>
+
+    <!-- WORK DONE -->
+    <div class="section" style="border-top: 4px solid #0891b2;">
+        <h2 class="section-title" style="border-color:#0891b2;">🛠️ ما تم إنجازه</h2>
+        <div class="nd-timeline">
+            <div class="nd-phase"><div class="nd-phase-num">1</div><div class="nd-phase-content"><div class="nd-phase-title">تأسيس البنية الإعلانية والتقنية</div><div class="nd-phase-text">إنشاء الحسابات الإعلانية وتهيئتها، وربط بيكسل تيك توك بالمتجر وتفعيل أحداث التتبع (مشاهدة الصفحة، ومشاهدة المنتج، والإضافة إلى السلة، وبدء الدفع، والشراء) لقياس كل مرحلة من رحلة العميل.</div></div></div>
+            <div class="nd-phase"><div class="nd-phase-num">2</div><div class="nd-phase-content"><div class="nd-phase-title">حملة التحويل الأولى على تيك توك <span class="badge badge-gray">19 سبتمبر</span></div><div class="nd-phase-text">استمرار حملة الشراء لبناء إشارات التحويل الأولى في البيكسل وتحديد الجمهور الأعلى تفاعلاً.</div></div></div>
+            <div class="nd-phase"><div class="nd-phase-num">3</div><div class="nd-phase-content"><div class="nd-phase-title">حملة التحويل الثانية على تيك توك <span class="badge badge-gray">20 أكتوبر</span></div><div class="nd-phase-text">إطلاق حملة جديدة بفيديوهات وشرائح جمهور مختلفة، خفّضت تكلفة الشراء إلى 106.9 ر.س مقارنةً بـ 299 ر.س في الحملة الأولى.</div></div></div>
+            <div class="nd-phase"><div class="nd-phase-num">4</div><div class="nd-phase-content"><div class="nd-phase-title">حملة المحادثات على ميتا <span class="badge badge-gray">19 أكتوبر</span></div><div class="nd-phase-text">إطلاق حملة توجّه العميل إلى محادثة واتساب مباشرة مع المتجر، لخدمة العملاء الذين يفضّلون الاستفسار قبل الطلب.</div></div></div>
+        </div>
+    </div>
+
+    <!-- SALLA -->
+    <div class="section" style="border-top: 4px solid #7c3aed;">
+        <h2 class="section-title" style="border-color:#7c3aed;">🛒 نتائج المتجر — منصة سلة</h2>
+        <p style="font-size:13px;color:#64748b;margin-bottom:20px;">تُعدّ أرقام سلة المرجع الفعلي للمبيعات، إذ تشمل جميع مصادر الطلبات خلال الفترة</p>
+
+        <div class="metrics-grid" style="margin-bottom:20px;">
+            <div class="metric-card green"><div class="metric-label">إجمالي المبيعات</div><div class="metric-value">4,430.8 ر.س</div><div class="metric-sub">الرقم الفعلي من سلة</div></div>
+            <div class="metric-card dark"><div class="metric-label">عدد الطلبات</div><div class="metric-value">27 طلباً</div><div class="metric-sub">خلال أكتوبر</div></div>
+            <div class="metric-card muted"><div class="metric-label">متوسط قيمة الطلب (AOV)</div><div class="metric-value">164.1 ر.س</div><div class="metric-sub">4,430.8 ÷ 27 طلباً</div></div>
+            <div class="metric-card muted"><div class="metric-label">تكلفة الطلب الفعلية</div><div class="metric-value">93.7 ر.س</div><div class="metric-sub">2,530.9 ÷ 27 طلباً</div></div>
+            <div class="metric-card gold"><div class="metric-label">العائد الحقيقي (ROAS)</div><div class="metric-value">1.75x</div><div class="metric-sub">4,430.8 ÷ 2,530.9 ر.س إنفاق</div></div>
+        </div>
+
+        <div style="font-size:15px;font-weight:700;margin-bottom:14px;">🏆 المنتجات الأكثر مبيعاً</div>
+        <div style="padding:16px;background:#f8fafc;border-radius:10px;">
+            <div class="prod-row" style="border-right-color:#a21caf;"><div class="prod-name">شيري بلوم | تنسيق ورد كريز مع شوكلت أنوش<div class="prod-tag">الأعلى مبيعاً</div></div><div class="prod-qty"><b style="color:#a21caf;">5</b><span>قطع</span></div></div>
+            <div class="prod-row" style="border-right-color:#a21caf;"><div class="prod-name">فازة سحر الروز مع شوكلت باتشي<div class="prod-tag">الأعلى مبيعاً</div></div><div class="prod-qty"><b style="color:#a21caf;">5</b><span>قطع</span></div></div>
+            <div class="prod-row" style="border-right-color:#7c3aed;"><div class="prod-name">فازة اليجانت روز</div><div class="prod-qty"><b style="color:#7c3aed;">2</b><span>قطعة</span></div></div>
+            <div class="prod-row" style="border-right-color:#7c3aed;"><div class="prod-name">باقة سحر الليليوم</div><div class="prod-qty"><b style="color:#7c3aed;">2</b><span>قطعة</span></div></div>
+            <div class="prod-row" style="border-right-color:#7c3aed;"><div class="prod-name">باقة لافندر روز</div><div class="prod-qty"><b style="color:#7c3aed;">2</b><span>قطعة</span></div></div>
+            <div class="prod-row"><div class="prod-name">11 منتجاً آخر<div class="prod-tag">قطعة واحدة لكل منتج، منها باقة تناغم الزهور وفازة أطياف الورد وحلوى الورد</div></div><div class="prod-qty"><b>11</b><span>قطعة</span></div></div>
+        </div>
+        <div class="insight-box success" style="margin-top:16px;margin-bottom:0;">
+            <div class="insight-title">✅ التنسيقات المدمجة مع الشوكولاتة تتصدر المبيعات</div>
+            <div class="insight-text">المنتجان الأعلى مبيعاً يجمعان الورد مع الشوكولاتة، ويمثلان 10 قطع من أصل 27 قطعة مباعة (37%).</div>
+        </div>
+    </div>
+
+    <!-- TIKTOK -->
+    <div class="section" style="border-top: 4px solid #000;">
+        <h2 class="section-title" style="border-color:#000;">📱 أداء تيك توك</h2>
+
+        <div class="metrics-grid" style="margin-bottom:20px;">
+            <div class="metric-card tiktok"><div class="metric-label">إجمالي الإنفاق</div><div class="metric-value">1,922.4 ر.س</div><div class="metric-sub">حملتا تحويل</div></div>
+            <div class="metric-card dark"><div class="metric-label">عدد مرات الظهور</div><div class="metric-value">172,468</div><div class="metric-sub">CPM: 11.15 ر.س</div></div>
+            <div class="metric-card muted"><div class="metric-label">عدد النقرات</div><div class="metric-value">1,780</div><div class="metric-sub">CTR: 1.03% · CPC: 1.08 ر.س</div></div>
+            <div class="metric-card muted"><div class="metric-label">الإضافات إلى السلة</div><div class="metric-value">61</div><div class="metric-sub">Adds to Cart (website)</div></div>
+            <div class="metric-card muted"><div class="metric-label">المشتريات</div><div class="metric-value">9 طلبات</div><div class="metric-sub">تكلفة الطلب: 213.6 ر.س</div></div>
+            <div class="metric-card green"><div class="metric-label">قيمة المشتريات</div><div class="metric-value">1,310 ر.س</div><div class="metric-sub">ROAS: 0.68x</div></div>
+        </div>
+
+        <div class="camp-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+            <div style="padding:18px;background:linear-gradient(135deg,#fdf4ff,#ede9fe);border-radius:12px;border:2px solid #c4b5fd;">
+                <div style="font-size:13px;font-weight:700;color:#6b21a8;margin-bottom:12px;">ACQ | Conv | ABO | 20 Oct <span class="badge badge-green">الأفضل أداءً</span></div>
+                <div class="camp-grid">
+                    <div><div style="font-size:10px;color:#7c3aed;font-weight:700;">الإنفاق</div><div style="font-size:18px;font-weight:700;">427.6 ر.س</div></div>
+                    <div><div style="font-size:10px;color:#7c3aed;font-weight:700;">المشتريات</div><div style="font-size:18px;font-weight:700;">4</div></div>
+                    <div><div style="font-size:10px;color:#7c3aed;font-weight:700;">تكلفة الطلب</div><div style="font-size:18px;font-weight:700;color:#15803d;">106.9 ر.س</div></div>
+                    <div><div style="font-size:10px;color:#7c3aed;font-weight:700;">ROAS</div><div style="font-size:18px;font-weight:700;color:#15803d;">1.08x</div></div>
+                </div>
+            </div>
+            <div style="padding:18px;background:#f8fafc;border-radius:12px;border:2px solid #e2e8f0;">
+                <div style="font-size:13px;font-weight:700;color:#475569;margin-bottom:12px;">ACQ | Conv | ABO | 19 Sep</div>
+                <div class="camp-grid">
+                    <div><div style="font-size:10px;color:#64748b;font-weight:700;">الإنفاق</div><div style="font-size:18px;font-weight:700;">1,494.8 ر.س</div></div>
+                    <div><div style="font-size:10px;color:#64748b;font-weight:700;">المشتريات</div><div style="font-size:18px;font-weight:700;">5</div></div>
+                    <div><div style="font-size:10px;color:#64748b;font-weight:700;">تكلفة الطلب</div><div style="font-size:18px;font-weight:700;">299 ر.س</div></div>
+                    <div><div style="font-size:10px;color:#64748b;font-weight:700;">ROAS</div><div style="font-size:18px;font-weight:700;">0.57x</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- META -->
+    <div class="section" style="border-top: 4px solid #1877f2;">
+        <h2 class="section-title" style="border-color:#1877f2;">💬 أداء ميتا — حملة واتساب</h2>
+        <p style="font-size:13px;color:#64748b;margin-bottom:20px;">ACQ | Eng-WhatsApp | 19 Oct</p>
+        <div class="metrics-grid" style="margin-bottom:16px;">
+            <div class="metric-card blue"><div class="metric-label">إجمالي الإنفاق</div><div class="metric-value">608.6 ر.س</div><div class="metric-sub">من 19 أكتوبر</div></div>
+            <div class="metric-card green"><div class="metric-label">محادثات واتساب</div><div class="metric-value">81</div><div class="metric-sub">محادثة مع المتجر</div></div>
+            <div class="metric-card muted"><div class="metric-label">تكلفة المحادثة</div><div class="metric-value">7.51 ر.س</div><div class="metric-sub">Cost per Conversation</div></div>
+            <div class="metric-card muted"><div class="metric-label">عدد مرات الظهور</div><div class="metric-value">40,398</div><div class="metric-sub">Impressions</div></div>
+            <div class="metric-card muted"><div class="metric-label">عدد النقرات</div><div class="metric-value">442</div><div class="metric-sub">CTR: 1.09% · CPC: 1.38 ر.س</div></div>
+        </div>
+        <div class="insight-box info" style="margin-bottom:0;">
+            <div class="insight-title">💡 81 عميلاً محتملاً تواصلوا مباشرة مع المتجر</div>
+            <div class="insight-text">بتكلفة 7.51 ر.س للمحادثة، وهي قناة مكمّلة للمتجر تخدم العملاء الذين يفضّلون الاستفسار قبل الطلب.</div>
+        </div>
+    </div>
+
+    <!-- FUNNEL -->
+    <div class="section" style="border-top: 4px solid #a21caf;">
+        <h2 class="section-title" style="border-color:#a21caf;">🔻 مسار الشراء على الموقع</h2>
+        <p style="font-size:13px;color:#64748b;margin-bottom:16px;">أحداث حملات تيك توك كما رصدها البيكسل</p>
+        <div style="padding:16px;background:#f8fafc;border-radius:10px;">
+            <div class="fn-row"><div class="fn-name">مشاهدات الصفحات</div><div class="city-bar-wrap"><div class="city-bar fn-bar-ok" style="width:100%;"></div></div><div class="fn-count">2,369</div><div class="fn-rate">—</div></div>
+            <div class="fn-row"><div class="fn-name">مشاهدات المنتجات</div><div class="city-bar-wrap"><div class="city-bar fn-bar-ok" style="width:53%;"></div></div><div class="fn-count">1,255</div><div class="fn-rate">53.0%</div></div>
+            <div class="fn-row"><div class="fn-name">الإضافة إلى السلة</div><div class="city-bar-wrap"><div class="city-bar fn-bar-ok" style="width:4.9%;"></div></div><div class="fn-count">61</div><div class="fn-rate">4.9%</div></div>
+            <div class="fn-row"><div class="fn-name">بدء إتمام الطلب</div><div class="city-bar-wrap"><div class="city-bar fn-bar-ok" style="width:6.9%;"></div></div><div class="fn-count">86</div><div class="fn-rate">6.9%*</div></div>
+            <div class="fn-row"><div class="fn-name">إضافة بيانات الدفع</div><div class="city-bar-wrap"><div class="city-bar fn-bar-ok" style="width:47.7%;"></div></div><div class="fn-count">41</div><div class="fn-rate">47.7%</div></div>
+            <div class="fn-row"><div class="fn-name">الشراء (بيكسل تيك توك)</div><div class="city-bar-wrap"><div class="city-bar fn-bar-ok" style="width:22%;"></div></div><div class="fn-count">9</div><div class="fn-rate">22.0%</div></div>
+            <div class="fn-row"><div class="fn-name" style="color:#14532d;">الطلبات الفعلية (سلة)</div><div class="city-bar-wrap" style="background:transparent;"></div><div class="fn-count" style="color:#15803d;">27</div><div class="fn-rate">جميع المصادر</div></div>
+        </div>
+        <p style="font-size:11px;color:#94a3b8;margin-top:8px;">* نسبة من مشاهدات المنتجات، لأن بدء إتمام الطلب سجّل عدداً أكبر من الإضافة إلى السلة.</p>
+    </div>
+
+    <!-- CHALLENGES -->
+    <div class="section" style="border-top: 4px solid #e53935;">
+        <h2 class="section-title" style="border-color:#e53935;">🔴 التحديات التي واجهتنا</h2>
+        <div class="insight-box critical">
+            <div class="insight-title">🔴 الحسابات الإعلانية جديدة تماماً</div>
+            <div class="insight-text">لا تملك الحسابات أي سجل أداء سابق، فتحتاج الخوارزمية إلى فترة تعلّم وإنفاق تمهيدي قبل أن تستقر تكلفة الاكتساب؛ لذا تكون تكلفة الطلب في البداية أعلى من المستهدف طويل المدى، وهو سلوك متوقع لأي حساب جديد.</div>
+        </div>
+        <div class="insight-box critical">
+            <div class="insight-title">🔴 بيكسل جديد دون بيانات تحويل</div>
+            <div class="insight-text">بدأ البيكسل من الصفر، ولم يسجّل حتى الآن إلا عدداً محدوداً من عمليات الشراء، وهو أقل من الحد الذي تحتاجه المنصات لتحسين الاستهداف نحو المشترين بدقة.</div>
+        </div>
+        <div class="insight-box critical" style="margin-bottom:0;">
+            <div class="insight-title">🔴 المتجر والعلامة التجارية في البداية</div>
+            <div class="insight-text">المتجر جديد دون سجل مبيعات أو تقييمات عملاء، والعلامة التجارية في مرحلة بناء الثقة لدى الجمهور؛ ما يجعل العميل أكثر تردداً في الطلب أونلاين من متجر لم يتعامل معه من قبل، ويفسّر تفضيل جزء من العملاء للتواصل عبر واتساب قبل الشراء.</div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div style="text-align:center;padding:20px;color:#94a3b8;font-size:12px;">
+        تقرير أداء — حلم الزهور | 1 – 31 أكتوبر 2026 · تم الإعداد بتاريخ 1 نوفمبر 2026
+    </div>
+
+</div>
+</body>
+</html>
